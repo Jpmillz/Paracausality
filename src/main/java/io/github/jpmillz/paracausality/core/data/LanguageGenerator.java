@@ -2,6 +2,7 @@ package io.github.jpmillz.paracausality.core.data;
 
 import io.github.jpmillz.paracausality.Paracausality;
 import io.github.jpmillz.paracausality.core.init.ItemInit;
+import io.github.jpmillz.paracausality.core.init.ModCreativeTabInit;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.LanguageProvider;
 
@@ -18,6 +19,7 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(ItemInit.ANDROMALITE_INGOT, "Andromalite Ingot");
         addItem(ItemInit.ANDROMALITE_SWORD, "Andromalite Sword");
         addItem(ItemInit.ANDROMALITE_PAXEL, "Andromalite Paxel");
+        add("tab.paracausality", "Paracausality");
 
 
     }

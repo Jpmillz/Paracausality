@@ -18,7 +18,7 @@ public class ItemInit {
             .fireResistant()
             ));
     public static final DeferredItem<PaxelItem> ANDROMALITE_PAXEL = ITEMS.register("andromalite_paxel",
-            ()-> new PaxelItem(7.0f,10.0f, ModTiers.ANDROMALITE, ModTags.Blocks.MINEABLE_WITH_PAXEL, new Item.Properties()
+            ()-> new PaxelItem(6.0f,4.0f, ModTiers.ANDROMALITE, ModTags.Blocks.MINEABLE_WITH_PAXEL, new Item.Properties()
                     .durability(2000)));
     public static final DeferredItem<SwordItem> ANDROMALITE_SWORD = ITEMS.register("andromalite_sword", ()-> new SwordItem(ModTiers.ANDROMALITE, 4,3, new Item.Properties()
             .rarity(Rarity.UNCOMMON)
