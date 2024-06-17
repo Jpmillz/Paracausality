@@ -16,6 +16,8 @@ public class LanguageGenerator extends LanguageProvider {
     protected void addTranslations() {
         addItem(ItemInit.COSMIC_CORE, "Cosmic Core");
         addItem(ItemInit.ANDROMALITE_INGOT, "Andromalite Ingot");
+        addItem(ItemInit.ANDROMALITE_SWORD, "Andromalite Sword");
+        addItem(ItemInit.ANDROMALITE_PAXEL, "Andromalite Paxel");
 
 
     }

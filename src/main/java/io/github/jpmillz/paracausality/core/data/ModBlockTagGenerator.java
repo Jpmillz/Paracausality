@@ -2,6 +2,7 @@ package io.github.jpmillz.paracausality.core.data;
 
 import io.github.jpmillz.paracausality.Paracausality;
 import io.github.jpmillz.paracausality.core.data.util.ModTags;
+import io.github.jpmillz.paracausality.core.init.ItemInit;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -26,6 +27,9 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
                 .addTag(BlockTags.MINEABLE_WITH_AXE)
                 .addTag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .addTag(BlockTags.MINEABLE_WITH_HOE);
+        tag(ModTags.Blocks.NEEDS_ANDROMALITE_TOOL)
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL);
+
 
 
     }
