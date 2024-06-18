@@ -2,6 +2,7 @@ package io.github.jpmillz.paracausality.core.init;
 
 import io.github.jpmillz.paracausality.Paracausality;
 import io.github.jpmillz.paracausality.core.data.util.ModTags;
+import io.github.jpmillz.paracausality.core.init.tiers.ModRarity;
 import io.github.jpmillz.paracausality.core.init.tiers.ModTiers;
 import io.github.jpmillz.paracausality.core.items.PaxelItem;
 import net.minecraft.world.item.*;
@@ -21,7 +22,7 @@ public class ItemInit {
             ()-> new PaxelItem(6.0f,4.0f, ModTiers.ANDROMALITE, ModTags.Blocks.MINEABLE_WITH_PAXEL, new Item.Properties()
                     .durability(2000)));
     public static final DeferredItem<SwordItem> ANDROMALITE_SWORD = ITEMS.register("andromalite_sword", ()-> new SwordItem(ModTiers.ANDROMALITE, 4,3, new Item.Properties()
-            .rarity(Rarity.UNCOMMON)
+            .rarity(ModRarity.EXOTIC)
             .durability(5400)
             .fireResistant()
     ));
