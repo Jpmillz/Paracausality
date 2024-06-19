@@ -35,38 +35,35 @@ public class StaffItem extends Item {
         super(pProperties);
 
     }
+
     //On left click use
-@Override
+    @Override
     public InteractionResultHolder use(Level pLevel, Player pPlayer, InteractionHand pUsedHand) {
         ItemStack itemStack = pPlayer.getItemInHand(pUsedHand);
         int displayDamage = pPlayer.getItemInHand(pUsedHand).getMaxDamage() - pPlayer.getItemInHand(pUsedHand).getDamageValue() - 1;
-        pPlayer.getCooldowns().addCooldown(ItemInit.HEROS_STAFF.get(), 140);
+        pPlayer.getCooldowns().addCooldown(ItemInit.HEROS_STAFF.get(), 70);
         if (!pLevel.isClientSide) {
             AreaEffectCloud cloud = new AreaEffectCloud(pLevel, pPlayer.getX(), pPlayer.getY() + 0.1f, pPlayer.getZ());
             cloud.setDuration(15);
-            cloud.addEffect(new MobEffectInstance(MobEffects.HEAL, 200, 4));
+            cloud.addEffect(new MobEffectInstance(MobEffects.HEAL, 300, 4));
             cloud.setRadius(10);
             cloud.setParticle(ParticleTypes.CRIMSON_SPORE);
-            pLevel.playSound((Player) null, pPlayer.position().x, pPlayer.position().y, pPlayer.position().z, SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.PLAYERS,
+            pLevel.playSound((Player) null, pPlayer.getX(), pPlayer.getY(), pPlayer.getZ(), SoundEvents.AMETHYST_BLOCK_RESONATE, SoundSource.PLAYERS,
                     4.0f, 1.0f);
             pLevel.addFreshEntity(cloud);
             pPlayer.sendSystemMessage(Component.literal("§c§oHealing Cloud Activated"));
+            itemStack.hurtAndBreak(1, pPlayer, e -> e.broadcastBreakEvent(pUsedHand));
         }
-            if (pLevel.isClientSide) {
-                pPlayer.awardStat(Stats.ITEM_USED.get(this));
-                itemStack.setDamageValue(itemStack.getDamageValue() + 1);
-                if (itemStack.getDamageValue() >= itemStack.getMaxDamage() - 3 && itemStack.getDamageValue() < itemStack.getMaxDamage()){
-                    pPlayer.sendSystemMessage(Component.literal("Critical Durability, " + displayDamage + " Spell(s) Left!"));
-                }
-                if (itemStack.getDamageValue() == itemStack.getMaxDamage()) {
-                    itemStack.shrink(1);
-                }
+        if (pLevel.isClientSide) {
+            if (itemStack.getDamageValue() >= itemStack.getMaxDamage() - 3 && !(itemStack.getDamageValue() == itemStack.getMaxDamage())) {
+                pPlayer.sendSystemMessage(Component.literal("Critical Durability, " + displayDamage + " Spell(s) Left!"));
             }
-            return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand));
         }
+        return InteractionResultHolder.sidedSuccess(itemStack, pLevel.isClientSide);
     }
+}
 
-
+//return InteractionResultHolder.pass(pPlayer.getItemInHand(pUsedHand));
 
 
 
