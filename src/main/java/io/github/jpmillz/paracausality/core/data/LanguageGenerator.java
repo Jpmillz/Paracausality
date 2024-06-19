@@ -18,7 +18,8 @@ public class LanguageGenerator extends LanguageProvider {
         addItem(ItemInit.COSMIC_CORE, "Cosmic Core");
         addItem(ItemInit.ANDROMALITE_INGOT, "Andromalite Ingot");
         addItem(ItemInit.ANDROMALITE_SWORD, "Andromalite Sword");
-        addItem(ItemInit.ANDROMALITE_PAXEL, "Andromalite Paxel");
+        addItem(ItemInit.ANDROMALITE_PAXEL, "§e§l§oAndromalite Paxel");
+        addItem(ItemInit.HEROS_STAFF, "§6§nHero's Staff");
         add("tab.paracausality", "Paracausality");
 
 

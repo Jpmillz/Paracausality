@@ -80,7 +80,7 @@ public class PaxelItem extends DiggerItem {
                     if (player != null) {
                         pContext.getItemInHand().hurtAndBreak(1, player, p_43122_ -> p_43122_.broadcastBreakEvent(pContext.getHand()));
                     }
-                }
+                }return InteractionResult.sidedSuccess(level.isClientSide);
             }
         }
         //Axe Logic Copied from Minecraft AxeItem Class

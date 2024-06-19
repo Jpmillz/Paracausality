@@ -5,6 +5,7 @@ import io.github.jpmillz.paracausality.core.data.util.ModTags;
 import io.github.jpmillz.paracausality.core.init.tiers.ModRarity;
 import io.github.jpmillz.paracausality.core.init.tiers.ModTiers;
 import io.github.jpmillz.paracausality.core.items.PaxelItem;
+import io.github.jpmillz.paracausality.core.items.StaffItem;
 import net.minecraft.world.item.*;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -26,6 +27,10 @@ public class ItemInit {
             .durability(5400)
             .fireResistant()
     ));
-
-
+    public static final DeferredItem<StaffItem> HEROS_STAFF = ITEMS.register("heros_staff", () -> new StaffItem(new Item.Properties()
+            .rarity(ModRarity.EXOTIC)
+            .fireResistant()
+            .stacksTo(1)
+            .durability(10)
+    ));
 }
