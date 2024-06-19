@@ -55,7 +55,7 @@ public class StaffItem extends Item {
             itemStack.hurtAndBreak(1, pPlayer, e -> e.broadcastBreakEvent(pUsedHand));
         }
         if (pLevel.isClientSide) {
-            if (itemStack.getDamageValue() >= itemStack.getMaxDamage() - 3 && !(itemStack.getDamageValue() == itemStack.getMaxDamage())) {
+            if (itemStack.getDamageValue() >= itemStack.getMaxDamage() - 3 && !(itemStack.getDamageValue() + 1 == itemStack.getMaxDamage())) {
                 pPlayer.sendSystemMessage(Component.literal("Critical Durability, " + displayDamage + " Spell(s) Left!"));
             }
         }
