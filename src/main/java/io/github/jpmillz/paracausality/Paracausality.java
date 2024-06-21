@@ -1,6 +1,7 @@
 package io.github.jpmillz.paracausality;
 
 import com.mojang.logging.LogUtils;
+import io.github.jpmillz.paracausality.core.enchantment.ModEnchantments;
 import io.github.jpmillz.paracausality.core.init.ItemInit;
 import io.github.jpmillz.paracausality.core.init.ModCreativeTabInit;
 import net.neoforged.api.distmarker.Dist;
@@ -23,6 +24,8 @@ public class Paracausality {
 
     public Paracausality(IEventBus modEventBus) {
         modEventBus.addListener(this::commonSetup);
+
+        ModEnchantments.ENCHANTMENTS.register(modEventBus);
 
         ModCreativeTabInit.CREATIVE_MODE_TABS.register(modEventBus);
 
